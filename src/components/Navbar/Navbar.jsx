@@ -7,7 +7,7 @@ export default function Navbar() {
         <div className='navbar'>
             <GlassSurface 
                 width={'75%'} 
-                height={'3.3125rem'}
+                height={'2.5rem'}
                 borderRadius={60}   
                 displace={0.5}
                 className="glass-surface-navbar-container"

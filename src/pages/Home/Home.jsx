@@ -1,4 +1,6 @@
 import LiquidEther from '../../components/backgrounds/LiquidEther/LiquidEther';
+import TextType from '../../components/effects/TextType';
+import GlassSurface from '../../components/backgrounds/GlassSurface/GlassSurface';
 
 import './Home.css';
 
@@ -18,7 +20,7 @@ export default function Home() {
             iterationsPoisson={32}
             resolution={0.5}
             isBounce={false}
-            autoDemo={true}
+            autoDemo={false}
             autoSpeed={0.5}
             autoIntensity={2.2}
             takeoverDuration={0.25}
@@ -27,10 +29,58 @@ export default function Home() {
         />
     </div>
 
+    const contentDiv = 
+    <div className="home-content">
+        <h1 className="home-title">Hi! I'm Aditi.</h1>
+        <div className="home-subtitle">
+            I like to keep my work <TextType
+                text={['simple.', 'a lil quirky ;).', 'elegant.']}
+                typingSpeed={75}
+                deletingSpeed={50}
+                pauseDuration={1000}
+                className="home-subtitle-changing-text"
+                cursorClassName="home-subtitle-cursor"
+                cursorCharacter="|"
+                showCursor={true}
+                hideCursorWhileTyping={false}
+                startOnVisible={true}
+            />
+        </div>
+        {/* <div className="home-button">
+            <GlassSurface
+                width={'fit-content'}
+                height={'3.125rem'}
+                borderRadius={30}
+                brightness={0.2}
+                displace={0.5}
+                className="glass-surface-home-button"
+                style={{
+                    'backgroundColor': 'rgba(255, 255, 255, 0.33)',
+                    padding: '0 1.59375rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 4px px rgba(255, 255, 255, 0.1)',
+                    border: '0.1px solid rgba(255, 255, 255, 0.3)',
+                    position: 'absolute',
+                    top: '70%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    textAlign: 'center',
+                    color: 'white',
+                    zIndex: 1,
+                }}
+            >
+                <span className="home-button-text">View Work &gt; &gt;</span>
+            </GlassSurface>
+        </div> */}
+    </div>
+
 
   return (
     <div className="home">
         {liquidEtherDiv}
+        {contentDiv}
     </div>
     );
 }
