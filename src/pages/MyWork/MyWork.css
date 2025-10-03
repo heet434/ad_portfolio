@@ -25,11 +25,11 @@
 /* My Work Section */
 .work-section {
     background-color: #060010;
-    padding: 6rem 1rem;
+    padding: 6rem 15.63rem;
 }
 
 .work-container {
-    max-width: 1488px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -37,21 +37,21 @@
 }
 
 .project-card {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 3.88rem;
     align-items: center;
-    gap: 4rem;
-    max-width: 1246px;
-    margin: 0 auto;
     width: 100%;
 }
 
 .project-card.reverse {
-    flex-direction: row-reverse;
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .project-image {
     flex: 0 0 auto;
-    width: 615px;
+    grid-column: span 6;
+    width: 100%;
     height: 670px;
     border-radius: 1.5rem;
     overflow: hidden;
@@ -59,7 +59,9 @@
 }
 
 .project-card.reverse .project-image {
-    width: 575px;
+    grid-column: 7 / span 6;
+    grid-row: 1;
+    width: 100%;
     height: 670px;
 }
 
@@ -75,10 +77,15 @@
 }
 
 .project-content {
-    flex: 1;
+    grid-column: span 6;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+.project-card.reverse .project-content {
+    grid-column: 1 / span 6;
+    grid-row: 1;
 }
 
 .project-header h3 {
@@ -123,12 +130,14 @@
 /* Mentor Work Section */
 .mentor-section {
     background-color: #E8E0FF;
-    padding: 6rem 2rem;
+    padding: 6rem 15.63rem;
+    overflow-x: hidden;
 }
 
 .mentor-container {
-    max-width: 1488px;
+    max-width: 100%;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .mentor-intro {
@@ -150,14 +159,18 @@
 
 .mentor-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6rem 1.5rem;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 3.88rem;
+    row-gap: 6rem;
+    width: 100%;
 }
 
 .mentor-card {
+    grid-column: span 6;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+    min-width: 0;
 }
 
 .mentor-image {
@@ -177,6 +190,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
+    min-width: 0;
 }
 
 .mentor-info h3 {
@@ -185,6 +199,7 @@
     font-size: 2.25rem;
     font-weight: 500;
     margin: 0;
+    word-wrap: break-word;
 }
 
 .mentor-info p {
@@ -194,41 +209,83 @@
     line-height: 144.138%;
     letter-spacing: 0.96px;
     margin: 0;
-    max-width: 461px;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 /* Responsive Design */
+
+/* Tablets (1024px and below) */
 @media (max-width: 1024px) {
+    .work-section,
+    .mentor-section {
+        padding: 4rem 2rem;
+    }
+
     .work-container {
         gap: 4rem;
     }
 
-    .project-card {
-        flex-direction: column !important;
+    .project-card,
+    .project-card.reverse {
+        display: flex;
+        flex-direction: column;
         gap: 2rem;
     }
 
     .project-image,
     .project-card.reverse .project-image {
         width: 100%;
-        max-width: 600px;
+        height: auto;
+        aspect-ratio: 615 / 670;
+        grid-column: unset;
+        grid-row: unset;
+    }
+
+    .project-content,
+    .project-card.reverse .project-content {
+        grid-column: unset;
+        grid-row: unset;
     }
 
     .mentor-grid {
         grid-template-columns: 1fr;
-        gap: 4rem;
+        row-gap: 4rem;
+    }
+
+    .mentor-card {
+        grid-column: span 12;
+    }
+
+    .custom-scroll-text,
+    .mentor-scroll-text {
+        font-size: 4rem;
     }
 }
 
+/* Mobile (768px and below) */
 @media (max-width: 768px) {
     .custom-scroll-text,
     .mentor-scroll-text {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .work-section,
     .mentor-section {
-        padding: 4rem 1rem;
+        padding: 3rem 1.5rem;
+    }
+
+    .work-container {
+        gap: 3rem;
+    }
+
+    .project-card {
+        gap: 1.5rem;
+    }
+
+    .project-image {
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 
     .project-header h3 {
@@ -245,10 +302,12 @@
 
     .mentor-intro {
         font-size: 1.5rem;
+        margin-bottom: 3rem;
     }
 
     .selected-work-title {
         font-size: 2rem;
+        margin-bottom: 3rem;
     }
 
     .mentor-info h3 {
@@ -257,5 +316,77 @@
 
     .mentor-info p {
         font-size: 1.125rem;
+    }
+
+    .mentor-image {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .mentor-grid {
+        row-gap: 3rem;
+    }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    .custom-scroll-text,
+    .mentor-scroll-text {
+        font-size: 1.75rem;
+    }
+
+    .work-section,
+    .mentor-section {
+        padding: 2rem 1rem;
+    }
+
+    .work-container {
+        gap: 2.5rem;
+    }
+
+    .project-card {
+        gap: 1.25rem;
+    }
+
+    .project-content {
+        gap: 1.5rem;
+    }
+
+    .project-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-header .subtitle {
+        font-size: 1.125rem;
+    }
+
+    .project-details p {
+        font-size: 1rem;
+    }
+
+    .mentor-intro {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+
+    .selected-work-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .mentor-info h3 {
+        font-size: 1.375rem;
+    }
+
+    .mentor-info p {
+        font-size: 1rem;
+    }
+
+    .mentor-grid {
+        row-gap: 2.5rem;
+    }
+
+    .mentor-card {
+        gap: 1.5rem;
     }
 }
