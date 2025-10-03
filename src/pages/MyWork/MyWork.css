@@ -1,0 +1,261 @@
+.my-work {
+    background-color: #060010;
+}
+
+.custom-scroll-text {
+    color: #FFF;
+    text-align: center;
+    font-family: Figtree;
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.mentor-scroll-text {
+    color: #000;
+    text-align: center;
+    font-family: Figtree;
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* My Work Section */
+.work-section {
+    background-color: #060010;
+    padding: 6rem 1rem;
+}
+
+.work-container {
+    max-width: 1488px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1246px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.project-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-image {
+    flex: 0 0 auto;
+    width: 615px;
+    height: 670px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-card.reverse .project-image {
+    width: 575px;
+    height: 670px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gradient-placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+.project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project-header h3 {
+    color: #FFF;
+    font-family: Figtree;
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.project-header .subtitle {
+    color: #FFF;
+    font-family: Figtree;
+    font-size: 1.875rem;
+    font-weight: 500;
+    margin: 0.5rem 0 0 0;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-details p {
+    color: #FFF;
+    font-family: Outfit;
+    font-size: 1.5rem;
+    line-height: 144.138%;
+    letter-spacing: 0.96px;
+    margin: 0;
+}
+
+.project-details .description {
+    margin-bottom: 0.5rem;
+}
+
+.project-details .detail strong {
+    font-weight: 700;
+}
+
+/* Mentor Work Section */
+.mentor-section {
+    background-color: #E8E0FF;
+    padding: 6rem 2rem;
+}
+
+.mentor-container {
+    max-width: 1488px;
+    margin: 0 auto;
+}
+
+.mentor-intro {
+    color: #000;
+    font-family: Figtree;
+    font-size: 2rem;
+    line-height: normal;
+    margin-bottom: 4rem;
+    max-width: 846px;
+}
+
+.selected-work-title {
+    color: #000;
+    font-family: Figtree;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 4rem;
+}
+
+.mentor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem 1.5rem;
+}
+
+.mentor-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.mentor-image {
+    width: 100%;
+    height: 498px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.placeholder-bg {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.mentor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.mentor-info h3 {
+    color: #000;
+    font-family: Figtree;
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.mentor-info p {
+    color: #000;
+    font-family: Outfit;
+    font-size: 1.5rem;
+    line-height: 144.138%;
+    letter-spacing: 0.96px;
+    margin: 0;
+    max-width: 461px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .work-container {
+        gap: 4rem;
+    }
+
+    .project-card {
+        flex-direction: column !important;
+        gap: 2rem;
+    }
+
+    .project-image,
+    .project-card.reverse .project-image {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .mentor-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-scroll-text,
+    .mentor-scroll-text {
+        font-size: 2rem;
+    }
+
+    .work-section,
+    .mentor-section {
+        padding: 4rem 1rem;
+    }
+
+    .project-header h3 {
+        font-size: 2rem;
+    }
+
+    .project-header .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .project-details p {
+        font-size: 1.125rem;
+    }
+
+    .mentor-intro {
+        font-size: 1.5rem;
+    }
+
+    .selected-work-title {
+        font-size: 2rem;
+    }
+
+    .mentor-info h3 {
+        font-size: 1.75rem;
+    }
+
+    .mentor-info p {
+        font-size: 1.125rem;
+    }
+}

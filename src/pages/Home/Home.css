@@ -38,3 +38,13 @@
 .home-subtitle-changing-text{
     font-style: italic;
 }
+
+.home-round-button{
+    margin: 0 auto 0 auto;
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

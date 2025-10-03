@@ -1,6 +1,7 @@
 import LiquidEther from '../../components/backgrounds/LiquidEther/LiquidEther';
 import TextType from '../../components/effects/TextType';
 import GlassSurface from '../../components/backgrounds/GlassSurface/GlassSurface';
+import RoundButton from '../../components/Buttons/RoundButton/RoundButton';
 
 import './Home.css';
 
@@ -76,11 +77,17 @@ export default function Home() {
         </div> */}
     </div>
 
+    const roundButtonDiv =
+    <div className="home-round-button">
+            <RoundButton onClick={() => alert('Round Button Clicked!')} />
+    </div>
+
 
   return (
     <div className="home">
         {liquidEtherDiv}
         {contentDiv}
+        {roundButtonDiv}
     </div>
     );
 }
