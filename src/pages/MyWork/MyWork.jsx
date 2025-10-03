@@ -1,4 +1,5 @@
 import ScrollVelocity from '../../components/effects/ScrollVelocity';
+import GridLines from 'react-gridlines';
 import './MyWork.css';
 
 const MyWork = () => {
@@ -73,14 +74,16 @@ const MyWork = () => {
 
   return (
     <div className="my-work">
-      <ScrollVelocity
-        texts={['My Work \u00A0\u00A0- \u00A0']} 
-        velocity={200}
-        stiffness={500}
-        className="custom-scroll-text"
-      />
       
       <section className="work-section">
+        <GridLines className="grid-lines" lineColor="rgba(255, 255, 255, 0.1)" cellWidth={74} cellHeight={74}>
+        </GridLines>
+        <ScrollVelocity
+          texts={['My Work \u00A0\u00A0- \u00A0']} 
+          velocity={200}
+          stiffness={500}
+          className="custom-scroll-text"
+        />
         <div className="work-container">
           {myWorkProjects.map((project) => (
             <div 
@@ -109,23 +112,23 @@ const MyWork = () => {
             </div>
           ))}
         </div>
+        {/* </GridLines> */}
       </section>
 
-      <ScrollVelocity
-        texts={['Mentor Work \u00A0\u00A0- \u00A0']} 
-        velocity={20}
-        stiffness={100}
-        className="mentor-scroll-text"
-      />
-
       <section className="mentor-section">
+        <ScrollVelocity
+          texts={['Mentor Work \u00A0\u00A0- \u00A0']} 
+          velocity={20}
+          stiffness={100}
+          className="mentor-scroll-text"
+        />
         <div className="mentor-container">
           <p className="mentor-intro">
             As the Product Design Lead at Students' Web Committee (SWC) at IITG I had the opportunity to mentor 7+ projects. Most of which have a user base of 10k+ students
           </p>
-          
+{/*           
           <h2 className="selected-work-title">Selected Work</h2>
-          
+           */}
           <div className="mentor-grid">
             {mentorWorkProjects.map((project) => (
               <div key={project.id} className="mentor-card">
