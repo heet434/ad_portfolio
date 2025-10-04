@@ -2,8 +2,25 @@ import LiquidEther from '../../components/backgrounds/LiquidEther/LiquidEther';
 import TextType from '../../components/effects/TextType';
 import GlassSurface from '../../components/backgrounds/GlassSurface/GlassSurface';
 import RoundButton from '../../components/Buttons/RoundButton/RoundButton';
+import { Link } from 'react-scroll';
 
 import './Home.css';
+
+
+const getScrollDuration = (targetElement) => {
+    if (!targetElement) return 2000; // Default duration
+    
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+    const currentPosition = window.pageYOffset;
+    const distance = Math.abs(targetPosition - currentPosition);
+    
+    // Calculate duration based on distance (min 500ms, max 2000ms)
+    const baseDuration = 1500;
+    const maxDuration = 4000;
+    const duration = Math.min(maxDuration, baseDuration + (distance / 3));
+    
+    return Math.round(duration);
+};
 
 
 export default function Home() {
@@ -15,17 +32,17 @@ export default function Home() {
             colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
             mouseForce={20}
             cursorSize={100}
-            isViscous={false}
-            viscous={30}
-            iterationsViscous={32}
+            isViscous={true}
+            viscous={48}
+            iterationsViscous={49}
             iterationsPoisson={32}
             resolution={0.5}
-            isBounce={true}
+            isBounce={false}
             autoDemo={true}
-            autoSpeed={0.3}
-            autoIntensity={1}
-            takeoverDuration={0.25}
-            autoResumeDelay={3000}
+            autoSpeed={0.5}
+            autoIntensity={2.2}
+            takeoverDuration={0.1}
+            autoResumeDelay={500}
             autoRampDuration={0.6}
         />
     </div>
@@ -78,13 +95,15 @@ export default function Home() {
     </div>
 
     const roundButtonDiv =
-    <div className="home-round-button">
-            <RoundButton onClick={() => alert('Round Button Clicked!')} />
-    </div>
+    <Link to="my-work" smooth={true} offset={100} duration={() => getScrollDuration(document.getElementById('my-work'))}>
+        <div className="home-round-button">
+            <RoundButton onClick={() => console.log('Lesssgooo!!!')} />
+        </div>
+    </Link>
 
 
   return (
-    <div className="home">
+    <div className="home" id="home">
         {liquidEtherDiv}
         {contentDiv}
         {roundButtonDiv}

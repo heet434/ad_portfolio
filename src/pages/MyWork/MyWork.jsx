@@ -73,7 +73,7 @@ const MyWork = () => {
   ];
 
   return (
-    <div className="my-work">
+    <div className="my-work" id="my-work">
       
       <section className="work-section">
         <GridLines className="grid-lines" lineColor="rgba(255, 255, 255, 0.1)" cellWidth={74} cellHeight={74}>
@@ -82,6 +82,7 @@ const MyWork = () => {
           texts={['My Work \u00A0\u00A0- \u00A0']} 
           velocity={200}
           stiffness={500}
+          numCopies={20}
           className="custom-scroll-text"
         />
         <div className="work-container">
@@ -115,11 +116,12 @@ const MyWork = () => {
         {/* </GridLines> */}
       </section>
 
-      <section className="mentor-section">
+      <section className="mentor-section" id="mentor-work">
         <ScrollVelocity
           texts={['Mentor Work \u00A0\u00A0- \u00A0']} 
-          velocity={20}
-          stiffness={100}
+          velocity={200}
+          stiffness={500}
+          numCopies={20}
           className="mentor-scroll-text"
         />
         <div className="mentor-container">

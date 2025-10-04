@@ -14,13 +14,15 @@
 }
 
 .glass-surface-navbar-container {
-    backdrop-filter: blur(18px);
+    /* backdrop-filter: blur(18px); */
+
     pointer-events: auto;
 
     /* display: flex; */
     /* align-items: center; */
     gap: 5.375rem;
     box-shadow: inset 0 0 10px 2px rgba(255, 255, 255, 0.1);
+    border-radius: 60;
 }
 
 .navbar-content {
@@ -100,6 +102,40 @@ ul{
     color: #ffffff;
 }
 
+/* Styles for react-scroll Link components */
+.navbar-text:hover {
+    cursor: pointer;
+    color: #ffffff;
+    /* transition: color 0.3s ease; */
+}
+
+.navbar-text.active {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+/* Dark mode styles for mentor section */
+.dark-mode .navbar-text,
+.navbar-text.dark-text {
+    color: #333333 !important;
+}
+
+.dark-mode .navbar-text:hover,
+.navbar-text.dark-text:hover {
+    color: #000000 !important;
+}
+
+.dark-mode .navbar-text.active,
+.navbar-text.dark-text.active {
+    color: #000000 !important;
+    font-weight: 400;
+}
+
+/* .glass-surface-navbar-container.dark-mode {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.20) !important;
+} */
+
 .navbar-item-selected-container {
     display: inline-flex;
     align-items: center;
@@ -123,6 +159,7 @@ ul{
     border: 0.1px solid rgba(255, 255, 255, 0.3);
     background: rgb(255, 255, 255);
     color: black;
+    cursor: pointer;
 }
 
 .navbar-item-resume-button .navbar-text {

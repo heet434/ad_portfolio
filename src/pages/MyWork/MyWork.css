@@ -1,6 +1,6 @@
-.my-work {
-    /* background-color: #060010; */
-}
+/* .my-work {
+    background-color: #060010;
+} */
 
 .grid-lines{
     position: fixed;
@@ -45,8 +45,8 @@
 
 .work-container {
     /* max-width: 100%; */
-    max-width: 740px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 2rem auto;
     display: flex;
     flex-direction: column;
     padding-top: 6.19rem;
@@ -69,7 +69,7 @@
     flex: 0 0 auto;
     grid-column: span 6;
     width: 100%;
-    height: 21.875rem;
+    height: 26.875rem;
     border-radius: 1.5rem;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
@@ -79,7 +79,7 @@
     grid-column: 7 / span 6;
     grid-row: 1;
     width: 100%;
-    height: 21.875rem;
+    height: 26.875rem;
 }
 
 .project-image img {
@@ -150,7 +150,7 @@
 
 .mentor-container {
     /* max-width: 100%; */
-    max-width: 740px;
+    max-width: 900px;
     margin: 6.19rem auto;
     overflow-x: hidden;
 }
@@ -176,7 +176,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: 3.88rem;
-    row-gap: 6rem;
+    row-gap: 3.88rem;
     width: 100%;
 }
 
@@ -184,13 +184,13 @@
     grid-column: span 6;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1.5rem;
     min-width: 0;
 }
 
 .mentor-image {
     width: 100%;
-    height: 15.875rem;
+    height: 20.875rem;
     border-radius: 1.5rem;
     overflow: hidden;
 }
@@ -204,7 +204,7 @@
 .mentor-info {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 0.5rem;
     min-width: 0;
 }
 
